@@ -8,10 +8,15 @@ let hotel = {
    },
    bookRoom: function(){
        var availableRooms = this.calculateAvailableRooms();
-       availableRooms = availableRooms - 1;
-       return availableRooms;
+       if(availableRooms > 0){
+          availableRooms = availableRooms - 1;
+          console.log(availableRooms);
+       }
+       else{
+          console.log("Sorry, all rooms are occupied.");
+       }
    },
-   relinquishRoom: function(){
+   checkOutRoom: function(){
        var availableRooms = this.calculateAvailableRooms();
        availableRooms = availableRooms + 1;
        return availableRooms;
